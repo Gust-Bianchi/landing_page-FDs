@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="#00c896">
+  <!-- Base -->
+  <rect x="28" y="52" width="8" height="8" rx="2"></rect>
+  
+  <!-- Suporte central -->
+  <rect x="30" y="16" width="4" height="36"></rect>
+
+  <!-- Braço horizontal -->
+  <rect x="18" y="16" width="28" height="4"></rect>
+
+  <!-- Correntes esquerda -->
+  <line x1="20" y1="20" x2="16" y2="32" stroke="#00c896" stroke-width="2"></line>
+  <line x1="24" y1="20" x2="28" y2="32" stroke="#00c896" stroke-width="2"></line>
+
+  <!-- Correntes direita -->
+  <line x1="40" y1="20" x2="36" y2="32" stroke="#00c896" stroke-width="2"></line>
+  <line x1="44" y1="20" x2="48" y2="32" stroke="#00c896" stroke-width="2"></line>
+
+  <!-- Pratos da balança -->
+  <ellipse cx="22" cy="34" rx="6" ry="2"></ellipse>
+  <ellipse cx="42" cy="34" rx="6" ry="2"></ellipse>
+</svg>

@@ -1,0 +1,288 @@
+:root{
+  /* Azul oficial */
+  --blue: #1F5F91;
+
+  /* Base */
+  --white: #ffffff;
+  --text: #0a2540;
+
+  /* Glassmorphism azul */
+  --glass-bg: rgba(31, 95, 145, 0.08);
+  --glass-bg-strong: rgba(31, 95, 145, 0.12);
+  --glass-border: rgba(31, 95, 145, 0.22);
+  --glass-border-soft: rgba(31, 95, 145, 0.14);
+  --shadow: rgba(31, 95, 145, 0.16);
+
+  /* Glow */
+  --glow-1: rgba(31, 95, 145, 0.22);
+  --glow-2: rgba(31, 95, 145, 0.10);
+}
+
+*{ box-sizing: border-box; }
+
+html, body{
+  margin: 0;
+  padding: 0;
+  background: var(--white);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+a{ color: inherit; }
+
+/* Helpers */
+.container{ max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.section{ padding: 86px 0; }
+
+/* Glass padrão */
+.glass{
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 14px 46px var(--shadow);
+}
+
+.glass-strong{
+  background: var(--glass-bg-strong);
+  border-color: var(--glass-border-soft);
+}
+
+/* Tipografia */
+.h2{
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  line-height: 1.1;
+  margin: 0 0 18px 0;
+  letter-spacing: -0.02em;
+}
+
+.accent{ color: var(--blue); font-weight: 900; }
+
+/* Botão tech */
+.btn-tech{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  border: 2px solid var(--blue);
+  color: var(--blue);
+  background: transparent;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 0 16px rgba(31, 95, 145, 0.18);
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+}
+
+.btn-tech:hover{
+  background: var(--blue);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 26px rgba(31, 95, 145, 0.32);
+}
+
+/* Cards grid */
+.grid-cards{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+/* Hover tech leve */
+.card-tilt{
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.card-tilt:hover{
+  transform: perspective(900px) rotateX(2deg) rotateY(-2deg) translateY(-2px);
+  border-color: rgba(31, 95, 145, 0.30);
+  box-shadow: 0 18px 52px rgba(31, 95, 145, 0.22);
+}
+
+/* Glow */
+.blue-glow{
+  position: absolute;
+  width: 720px;
+  height: 720px;
+  border-radius: 999px;
+  background: radial-gradient(circle, var(--glow-1) 0%, rgba(31, 95, 145, 0) 60%);
+  pointer-events: none;
+  filter: blur(12px);
+  z-index: 0;
+}
+
+/* Grid tech sutil */
+.tech-grid{
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(31, 95, 145, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(31, 95, 145, 0.06) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: radial-gradient(circle at 50% 30%, rgba(0,0,0,0.75), transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+/* =========================
+   POLIMENTO GLOBAL
+   ========================= */
+
+/* 1) Layout consistente de seção */
+:root{
+  --container: 1200px;
+  --section-y: 86px;          /* altura padrão de cada seção */
+  --section-y-mobile: 64px;
+  --radius: 22px;
+}
+
+/* 2) Scroll behavior e âncoras (header fixo) */
+html{
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px; /* evita que o header cubra o título ao clicar no menu */
+}
+
+/* 3) Corpo sem “espaço fantasma” */
+html, body{
+  height: 100%;
+}
+body{
+  overflow-x: hidden;
+}
+
+/* 4) Container padrão (garante mesmo tamanho em todos os setores) */
+.container{
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* 5) Seções: mesmo “ritmo” */
+.section{
+  padding: var(--section-y) 0;
+}
+
+/* 6) Cartão base padronizado */
+.glass{
+  border-radius: var(--radius);
+}
+
+/* 7) Títulos e textos com consistência */
+.h2{
+  margin: 0 0 18px 0;
+}
+p{
+  margin: 0;
+}
+
+/* 8) Última seção e footer sem espaço sobrando */
+#app main{
+  display: block;
+  padding-bottom: 0; /* remove respiro extra no final */
+}
+footer{
+  margin-top: 0;
+}
+
+/* 9) Scrollbar custom (Chrome/Edge/Safari) */
+*::-webkit-scrollbar{
+  width: 12px;
+  height: 12px;
+}
+*::-webkit-scrollbar-track{
+  background: rgba(31,95,145,0.08);
+}
+*::-webkit-scrollbar-thumb{
+  background: rgba(31,95,145,0.55);
+  border-radius: 999px;
+  border: 3px solid rgba(255,255,255,0.85);
+}
+*::-webkit-scrollbar-thumb:hover{
+  background: rgba(31,95,145,0.75);
+}
+
+/* 10) Scrollbar Firefox */
+*{
+  scrollbar-width: thin;
+  scrollbar-color: rgba(31,95,145,0.65) rgba(31,95,145,0.10);
+}
+
+/* 11) Responsivo */
+@media (max-width: 768px){
+  .section{
+    padding: var(--section-y-mobile) 0;
+  }
+}
+
+
+/* evita glow/efeitos vazarem e cria padrão */
+.section{
+  position: relative;
+  overflow: hidden;
+}
+
+/* =========================
+   REVEAL ANIMATION (GLOBAL)
+   ========================= */
+
+.reveal-init{
+  opacity: 0 !important;
+  transform: translateY(var(--reveal-y, 18px)) scale(0.99) !important;
+  filter: blur(10px) !important;
+
+  transition:
+    opacity 800ms ease,
+    transform 800ms cubic-bezier(.2,.8,.2,1),
+    filter 800ms ease !important;
+
+  transition-delay: var(--reveal-delay, 0ms) !important;
+  will-change: opacity, transform, filter;
+}
+
+.reveal-init.reveal-in{
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+  filter: blur(0) !important;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .reveal-init{
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
+
+html, body{
+  height: 100%;
+  overflow-y: auto;   /* ✅ scroll no body */
+  overflow-x: hidden;
+}
+
+/* header não deve criar contexto de scroll */
+.site-header{
+  pointer-events: auto;
+}
+
+/* scrollbar sempre visível acima de tudo */
+::-webkit-scrollbar{
+  width: 12px;
+}
+
+::-webkit-scrollbar-track{
+  background: rgba(31,95,145,0.08);
+}
+
+::-webkit-scrollbar-thumb{
+  background: rgba(31,95,145,0.55);
+  border-radius: 999px;
+  border: 3px solid rgba(255,255,255,0.9);
+}
+
+/* Firefox */
+*{
+  scrollbar-width: thin;
+  scrollbar-color: rgba(31,95,145,0.6) rgba(31,95,145,0.1);
+}

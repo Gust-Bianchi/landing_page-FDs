@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="#00c896">
+  <!-- Olho externo estilizado -->
+  <path d="M10 32 Q32 10 54 32 Q32 54 10 32 Z" fill="none" stroke="#00c896" stroke-width="3"></path>
+  
+  <!-- Íris externa -->
+  <circle cx="32" cy="32" r="12" fill="none" stroke="#00c896" stroke-width="3"></circle>
+  
+  <!-- Pupila -->
+  <circle cx="32" cy="32" r="5" fill="#00c896"></circle>
+</svg>
