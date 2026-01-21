@@ -78,7 +78,7 @@ export default {
   z-index: 2;
   padding: 30px 32px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 28px;
 }
@@ -104,22 +104,46 @@ export default {
   align-items: flex-start;
 }/* SOQUETE DA LOGO */
 
+/* SOQUETE DA LOGO */
 .logo-socket{
   width: 420px;
-  height: 180px;              /* quadrado maior */
+  height: 180px;
   display: flex;
-  align-items: center;        /* centraliza vertical */
-  justify-content: center;    /* centraliza horizontal */
+  align-items: center;
+  justify-content: center;
 }
 
-/* LOGO EQUIFAX */
+/* LOGO */
 .equifax-logo{
-  max-width: 150%;             /* ocupa quase todo o espaço */
-  max-height: 70%;            /* mantém respiro */
+  width: 100%;
+  height: 100%;
+  max-width: 420px;     /* controla o tamanho máximo */
+  max-height: 180px;
   object-fit: contain;
-  margin-top: 350px;
+  margin-top: 100;
+}
 
-  /* preta, igual ao header */
+/* MOBILE */
+@media (max-width: 980px){
+  .card{
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .right{
+    justify-content: center;
+  }
+
+  .logo-socket{
+    width: 100%;
+    height: 140px;      /* ajusta como você quiser */
+    margin-top: 190px;   /* espaçamento normal entre texto e logo */
+  }
+
+  .equifax-logo{
+    max-width: 260px;   /* evita ficar gigante no celular */
+    max-height: 140px;
+  }
 }
 
 /* MOBILE */
