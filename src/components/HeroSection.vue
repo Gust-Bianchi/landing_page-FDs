@@ -100,6 +100,17 @@
                 placeholder="00.000.000/0000-00"
               />
             </div>
+            <div class="row">
+  <label for="telefone">Telefone</label>
+  <input
+    id="telefone"
+    v-model="form.telefone"
+    @input="form.telefone = maskPhone(form.telefone)"
+    inputmode="numeric"
+    required
+    placeholder="(11) 99999-9999"
+  />
+</div>
 
             <div class="row">
               <label for="email">E-mail corporativo</label>
